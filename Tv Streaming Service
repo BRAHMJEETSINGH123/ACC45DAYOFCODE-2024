@@ -1,0 +1,20 @@
+# Function to calculate the minimum total cost
+def calculate_minimum_cost(T, test_cases):
+    results = []
+    for i in range(T):
+        N, X = test_cases[i]
+        subscriptions_needed = (N + 5) // 6  # Rounds up the division
+        total_cost = subscriptions_needed * X
+        results.append(total_cost)
+    return results
+
+# Input example
+T = 3
+test_cases = [(1, 100), (12, 250), (16, 135)]
+
+# Get the results
+results = calculate_minimum_cost(T, test_cases)
+
+# Print the results
+for result in results:
+    print(result)
