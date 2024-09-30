@@ -1,0 +1,13 @@
+# Read the number of test cases
+T = int(input())
+
+# Process each test case
+for _ in range(T):
+    # Read the values of X and Y
+    X, Y = map(int, input().split())
+    
+    # Calculate total working hours in a week
+    total_hours = 4 * X + Y
+    
+    # Output the result
+    print(total_hours)
