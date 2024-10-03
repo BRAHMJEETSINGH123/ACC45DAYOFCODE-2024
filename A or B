@@ -1,0 +1,21 @@
+def max_points(T, test_cases):
+    results = []
+    for X, Y in test_cases:
+        # Option 1: Solve A first, then B
+        score_A_first = (500 - 2 * X) + (1000 - 4 * (X + Y))
+        # Option 2: Solve B first, then A
+        score_B_first = (1000 - 4 * Y) + (500 - 2 * (X + Y))
+        
+        # Maximum score from the two options
+        max_score = max(score_A_first, score_B_first)
+        results.append(max_score)
+    
+    return results
+
+# Input and output processing
+T = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+results = max_points(T, test_cases)
+
+for result in results:
+    print(result)
