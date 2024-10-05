@@ -1,0 +1,21 @@
+def check_monopoly(T, cases):
+    results = []
+    for case in cases:
+        P, Q, R, S = case
+        # Check monopoly condition
+        if (P > Q + R + S) or (Q > P + R + S) or (R > P + Q + S) or (S > P + Q + R):
+            results.append("YES")
+        else:
+            results.append("NO")
+    return results
+
+# Input reading
+T = int(input())
+cases = [tuple(map(int, input().split())) for _ in range(T)]
+
+# Check for monopoly and get results
+results = check_monopoly(T, cases)
+
+# Print results
+for result in results:
+    print(result)
