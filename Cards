@@ -1,0 +1,23 @@
+def min_flips(test_cases):
+    results = []
+    for N, X in test_cases:
+        # Calculate the number of flips to make all face-up or all face-down
+        flips_to_all_up = N - X  # cards that are face-down
+        flips_to_all_down = X    # cards that are face-up
+        # Minimum of both scenarios
+        results.append(min(flips_to_all_up, flips_to_all_down))
+    return results
+
+# Input Processing
+T = int(input())
+test_cases = []
+
+for _ in range(T):
+    N, X = map(int, input().split())
+    test_cases.append((N, X))
+
+results = min_flips(test_cases)
+
+# Output results
+for result in results:
+    print(result)
