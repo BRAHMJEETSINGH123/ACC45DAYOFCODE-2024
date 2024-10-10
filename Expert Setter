@@ -1,0 +1,20 @@
+def is_expert(T, test_cases):
+    results = []
+    for i in range(T):
+        X, Y = test_cases[i]
+        if 2 * Y >= X:
+            results.append("YES")
+        else:
+            results.append("NO")
+    return results
+
+# Input reading
+T = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+
+# Get results
+results = is_expert(T, test_cases)
+
+# Printing each result in the expected format
+for result in results:
+    print(result)
