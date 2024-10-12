@@ -1,0 +1,17 @@
+def min_bags_needed(N, K, M):
+    total_capacity_of_one_bag = K * M
+    # Calculate the number of bags needed
+    bags_needed = (N + total_capacity_of_one_bag - 1) // total_capacity_of_one_bag
+    return bags_needed
+
+# Reading input
+T = int(input())
+results = []
+
+for _ in range(T):
+    N, K, M = map(int, input().split())
+    results.append(min_bags_needed(N, K, M))
+
+# Printing results
+for result in results:
+    print(result)
