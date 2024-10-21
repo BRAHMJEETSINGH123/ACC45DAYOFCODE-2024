@@ -1,0 +1,12 @@
+# Number of test cases
+T = int(input())
+
+for _ in range(T):
+    # Read N, X, Y for each test case
+    N, X, Y = map(int, input().split())
+    
+    # Check if Y is in the achievable range and is a multiple of X
+    if 0 <= Y <= N * X and Y % X == 0:
+        print("YES")
+    else:
+        print("NO")
