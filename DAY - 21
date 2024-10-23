@@ -1,0 +1,36 @@
+import math
+
+def minimum_attacks(test_cases):
+    results = []
+    for H, X, Y in test_cases:
+        # Number of regular attacks with no special attack
+        regular_attacks = math.ceil(H / X)
+        
+        # Number of attacks if using the special attack first
+        if H - Y <= 0:
+            special_attack_first = 1  # Only need the special attack
+        else:
+            # Remaining health after special attack
+            remaining_health = H - Y
+            special_attack_first = 1 + math.ceil(remaining_health / X)  # 1 for the special attack
+
+        # Minimum of the two strategies
+        min_attacks = min(regular_attacks, special_attack_first)
+        results.append(min_attacks)
+    
+    return results
+
+
+# Input reading
+T = int(input())
+test_cases = []
+for _ in range(T):
+    H, X, Y = map(int, input().split())
+    test_cases.append((H, X, Y))
+
+# Get results
+results = minimum_attacks(test_cases)
+
+# Output results
+for res in results:
+    print(res)
