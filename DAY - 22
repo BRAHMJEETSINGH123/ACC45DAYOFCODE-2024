@@ -1,0 +1,27 @@
+def find_degree_of_polynomial(test_cases):
+    results = []
+    for case in test_cases:
+        N, coefficients = case
+        # Start from the end and find the first non-zero coefficient
+        degree = -1
+        for i in range(N - 1, -1, -1):
+            if coefficients[i] != 0:
+                degree = i
+                break
+        results.append(degree)
+    return results
+
+# Read input
+T = int(input("Enter number of test cases: "))
+test_cases = []
+for _ in range(T):
+    N = int(input("Enter number of terms: "))
+    coefficients = list(map(int, input("Enter coefficients: ").strip().split()))
+    test_cases.append((N, coefficients))
+
+# Find degrees of polynomials
+degrees = find_degree_of_polynomial(test_cases)
+
+# Output results
+for d in degrees:
+    print(d)
