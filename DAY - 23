@@ -1,0 +1,25 @@
+def count_problems_in_contests():
+    import sys
+    input = sys.stdin.read
+    data = input().splitlines()
+
+    T = int(data[0])  # Number of test cases
+    results = []
+
+    index = 1
+    for _ in range(T):
+        N = int(data[index])  # Total count of problems
+        contest_codes = data[index + 1].split()  # List of contest codes
+        index += 2
+
+        count_START38 = contest_codes.count("START38")
+        count_LTIME108 = contest_codes.count("LTIME108")
+
+        # Store the result for this test case
+        results.append(f"{count_START38} {count_LTIME108}")
+
+    # Output all results
+    print("\n".join(results))
+
+# Calling the function to execute the logic
+count_problems_in_contests()
