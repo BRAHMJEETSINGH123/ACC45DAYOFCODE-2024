@@ -1,0 +1,19 @@
+def minimum_steps(T, cases):
+    results = []
+    for i in range(T):
+        A, B, K = cases[i]
+        distance = abs(A - B)
+        steps = (distance + K - 1) // K  # Calculate the ceiling of distance / K
+        results.append(steps)
+    return results
+
+# Input reading
+T = int(input())
+cases = [tuple(map(int, input().split())) for _ in range(T)]
+
+# Get results
+results = minimum_steps(T, cases)
+
+# Output results
+for res in results:
+    print(res)
