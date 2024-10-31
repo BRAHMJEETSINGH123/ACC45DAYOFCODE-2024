@@ -1,0 +1,17 @@
+def determine_server(test_cases):
+    results = []
+    for P, Q in test_cases:
+        S = P + Q
+        if (S // 2) % 2 == 0:
+            results.append("Alice")
+        else:
+            results.append("Bob")
+    return results
+
+# Input
+T = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(T)]
+
+# Determine and print results
+for result in determine_server(test_cases):
+    print(result)
