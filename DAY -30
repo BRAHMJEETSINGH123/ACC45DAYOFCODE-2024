@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;  // Number of test cases
+
+    while (T--) {
+        int A, B, C, D;
+        cin >> A >> B;  // Initial scores
+        cin >> C >> D;  // Final scores
+
+        // Check the conditions
+        if (C >= A && D >= B) {
+            cout << "POSSIBLE" << endl;
+        } else {
+            cout << "IMPOSSIBLE" << endl;
+        }
+    }
+
+    return 0;
+}
