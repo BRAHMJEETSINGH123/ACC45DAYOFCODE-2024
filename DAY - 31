@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T; // Number of test cases
+    cin >> T;
+
+    while (T--) {
+        int N; // Number of players Chef is considering
+        cin >> N;
+
+        // Calculate the number of ways to choose captain and vice-captain
+        int choices = N * (N - 1);
+        cout << choices << endl; // Output the result for this test case
+    }
+
+    return 0;
+}
