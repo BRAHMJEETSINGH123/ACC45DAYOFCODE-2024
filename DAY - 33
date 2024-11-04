@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Read the number of test cases
+    while (T--) {
+        int N;
+        cin >> N; // Read the number of bits
+        if (N % 4 == 0) {
+            cout << "Good" << endl; // If divisible by 4
+        } else {
+            cout << "Not Good" << endl; // If not divisible by 4
+        }
+    }
+    return 0;
+}
