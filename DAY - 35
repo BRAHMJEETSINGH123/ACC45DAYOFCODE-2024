@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;  // Number of test cases
+
+    while (T--) {
+        int X, A, B;
+        cin >> X >> A >> B;  // Read X, A, B
+
+        int score = A + 2 * B;  // Calculate total score
+
+        if (score >= X) {
+            cout << "Qualify" << endl;
+        } else {
+            cout << "NotQualify" << endl;
+        }
+    }
+
+    return 0;
+}
