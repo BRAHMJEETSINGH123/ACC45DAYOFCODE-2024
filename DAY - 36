@@ -1,0 +1,21 @@
+# Reading number of test cases
+T = int(input())
+
+# Processing each test case
+for _ in range(T):
+    N = int(input())
+    
+    # Count how many full 7-day weeks there are
+    full_weeks = N // 7
+    # Count extra days
+    extra_days = N % 7
+    
+    # Each full week has one Tuesday
+    tuesdays = full_weeks
+    
+    # If extra days include a Tuesday (i.e., extra_days >= 2)
+    if extra_days >= 2:
+        tuesdays += 1
+    
+    # Output the number of Tuesdays
+    print(tuesdays)
