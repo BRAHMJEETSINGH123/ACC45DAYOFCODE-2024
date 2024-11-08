@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+        vector<int> A(N);
+        int sum = 0;
+        int count1 = 0, count_minus1 = 0;
+
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
+            sum += A[i];
+            if (A[i] == 1) count1++;
+            else count_minus1++;
+        }
+
+        if (sum == 0) {
+            cout << 0 << endl;
+        } else if (sum % 2 != 0) {
+            cout << -1 << endl;
+        } else {
+            // Minimum number of operations to balance the sum
+            int imbalance = abs(count1 - count_minus1);
+            cout << imbalance / 2 << endl;
+        }
+    }
+
+    return 0;
+}
