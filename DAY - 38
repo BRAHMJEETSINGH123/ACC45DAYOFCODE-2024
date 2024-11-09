@@ -1,0 +1,24 @@
+import math
+
+# Function to compute the total time for each test case
+def compute_total_time(N, A, B):
+    # Number of rounds is log2(N), since N is a power of 2
+    rounds = int(math.log2(N))
+    # Total time is the time for all rounds plus the time for breaks
+    total_time = rounds * A + (rounds - 1) * B
+    return total_time
+
+# Main function to handle multiple test cases
+def main():
+    # Read number of test cases
+    T = int(input())
+    
+    # Process each test case
+    for _ in range(T):
+        N, A, B = map(int, input().split())
+        # Compute and print the result for the current test case
+        print(compute_total_time(N, A, B))
+
+# Execute the main function
+if __name__ == "__main__":
+    main()
