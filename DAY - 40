@@ -1,0 +1,8 @@
+# Read input
+X, Y = map(int, input().split())
+
+# Calculate the total time spent
+total_time = (Y // 2) + (X - Y)
+
+# Output the result
+print(total_time)
