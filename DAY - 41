@@ -1,0 +1,16 @@
+# Read the number of test cases
+T = int(input())
+
+# Process each test case
+for _ in range(T):
+    # Read the capacity of the geyser (X) and the bucket (Y)
+    X, Y = map(int, input().split())
+    
+    # Calculate the number of full buckets of water
+    total_buckets = X // Y
+    
+    # Calculate the maximum number of people who can take a bath
+    people_count = total_buckets // 2
+    
+    # Output the result for the current test case
+    print(people_count)
