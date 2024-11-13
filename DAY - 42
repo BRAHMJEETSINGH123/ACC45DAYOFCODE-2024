@@ -1,0 +1,21 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int T; // number of test cases
+    cin >> T;
+
+    while (T--) {
+        int A, B, C;
+        cin >> A >> B >> C;
+
+        // Sum of the prices minus the minimum price
+        int total = A + B + C - min({A, B, C});
+        
+        // Output the amount Chef needs to pay
+        cout << total << endl;
+    }
+
+    return 0;
+}
