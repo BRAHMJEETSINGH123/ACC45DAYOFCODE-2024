@@ -1,0 +1,17 @@
+class AbstractDevice {
+public:
+    virtual void start() = 0;  // Pure virtual function
+};
+
+class Printer : public AbstractDevice {
+public:
+    void start() override {
+        cout << "Printer starting..." << endl;
+    }
+};
+
+int main() {
+    Printer myPrinter;
+    myPrinter.start();  // Output: Printer starting...
+    return 0;
+}
